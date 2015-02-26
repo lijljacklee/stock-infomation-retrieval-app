@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Jialiang Li's Homework 8</title>
+<link rel="stylesheet"
+	href="http://yui.yahooapis.com/3.15.0/build/cssreset/cssreset.css"
+	type="text/css"></link>
+<link rel="stylesheet"
+	href="http://yui.yahooapis.com/3.15.0/build/cssfonts/cssfonts.css"
+	type="text/css"></link>
+<link rel="stylesheet"
+	href="http://yui.yahooapis.com/3.15.0/build/cssbase/cssbase.css"
+	type="text/css"></link>
+<link rel="stylesheet"
+	href="http://cs-server.usc.edu:17064/examples/servlets/hw8.css"
+	type="text/css"></link>
+<script src="http://yui.yahooapis.com/3.15.0/build/yui/yui-min.js"></script>
+<script src="http://code.jquery.com/jquery-2.1.0.js"></script>
+<script src="http://cs-server.usc.edu:17064/examples/servlets/hw8.js"></script>
+<script type="text/javascript">
+	var YAHOO = {
+	        Finance: {
+	            SymbolSuggest: {}
+	        }
+	    };
+
+	YUI().use('autocomplete', 'autocomplete-highlighters', function (Y) {
+		Y.one('#input').plug(Y.Plugin.AutoComplete, {
+			activateFirstItem: true,
+		    source: function (query, callback) {                          
+	            // Use JQuery to call JSONP API
+		    	$.ajax({
+		              type: "GET",
+		              url: "http://d.yimg.com/autoc.finance.yahoo.com/autoc",
+		              data: {query: query},
+		              dataType: "jsonp",
+		              jsonp : "callback",
+		              jsonpCallback: "YAHOO.Finance.SymbolSuggest.ssCallback",
+		          });
+		          // call back function
+		          YAHOO.Finance.SymbolSuggest.ssCallback = function (data) {
+		        	  var result = data.ResultSet.Result;
+		        	  var items = new Array();
+		        	  for(var i = 0; i < result.length; i++)
+		        	  {
+		        		  var item = result[i];
+		        		  var str = item.symbol + ", " + item.name + "(" + item.exch +")";
+		        		  items.push(str);
+		        	  }
+		        	  callback(items);
+		          }
+		    	
+		    },
+		    on : {
+				select : function(event) {
+			    	var str = event.result.text.split(",")[0];
+			    	loadXML(str);
+		        }
+		    }
+
+	     });
+	});
+</script>
+</head>
+<body class="yui3-skin-sam">
+	<div id="background">
+
+		<div id="content">
+			
+			<form name="myform" method="POST" id="location" class="yui3-skin-sam">
+				<p id="form">
+					<font color='#FFF'>Company: </font><input id="input" NAME="symbol" size="70" placeholder="Enter company symbol"> 
+							<input id="button" type="button" value="Search" onClick="viewXML(this.form)">
+				</p>
+				<div id="popups"></div>
+			</form>
+			<div id="topSection">
+				<div id="company">
+					<input type="hidden" id="companyName" value=""/>
+					<div id="symbol"></div>
+					<div id="notFound"></div>
+				</div>
+				<div>
+					<font id="LastTradePriceOnly"></font>
+					<font id="changeType"></font>
+					<font id="change" color="#000"></font>
+				</div>
+				<div id="share">
+					<div id="fb-root"></div>
+				</div>
+			</div>
+			<div id="SImage"></div>
+			<div id="hr"></div>
+			<div id="bottomSection">
+				<div id="tabView"></div>
+			</div>
+		</div>
+		<img
+			src="http://www.greekshares.com/uploads/image/stock-market-investing-in-stocks.jpg"
+			width="100%" height="100%" />
+	</div>
+
+
+</body>
+</html>
