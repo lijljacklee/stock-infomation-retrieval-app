@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    	xmlns:tools="http://schemas.android.com/tools"
+		android:id="@+id/scrollView1"
+		android:background="#f5f5f5"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent" >
+<!-- xmlns:tools="http://schemas.android.com/tools" tools:context="com.example.csci571hw9.MainActivity$PlaceholderFragment" -->
+
+<RelativeLayout
+    android:id="@+id/relativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin" >
+
+    <AutoCompleteTextView
+        android:id="@+id/edit_message"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/title"
+        android:layout_marginTop="15dp"
+        android:layout_toLeftOf="@+id/button1"
+        android:ems="10"
+        android:hint="@string/edit_message"
+        android:text="@string/symbol" >
+
+        <requestFocus android:layout_width="match_parent" />
+
+    </AutoCompleteTextView>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/title"
+        android:textSize="20sp" />
+    <!-- android:onClick="sendMessage" -->
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/button1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="14dp"
+        android:text="@string/name"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/change"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/LastTradePriceOnly"
+        android:layout_centerHorizontal="true"
+        android:text="@string/change"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/LastTradePriceOnly"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/name"
+        android:layout_centerHorizontal="true"
+        android:text="@string/LastTradePriceOnly"
+        android:textSize="25sp" />
+
+    <TableLayout
+        android:id="@+id/tableLayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/change"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" >
+
+        <TableRow
+            android:id="@+id/tableRow1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/PreviousClose"
+                android:layout_width="wrap_content"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/PreviousClose" />
+
+            <TextView
+                android:id="@+id/PreviousClose2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/PreviousClose2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Open"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/Open" />
+
+            <TextView
+                android:id="@+id/Open2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/Open2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Bid"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/Bid" />
+
+            <TextView
+                android:id="@+id/Bid2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/Bid2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Ask"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/Ask" />
+
+            <TextView
+                android:id="@+id/Ask2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/Ask2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/OneYearTargetPrice"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/OneYearTargetPrice" />
+
+            <TextView
+                android:id="@+id/OneYearTargetPrice2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/OneYearTargetPrice2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/DayRange"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/DayRange" />
+
+            <TextView
+                android:id="@+id/DayRange2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/DayRange2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/YearRange"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/YearRange" />
+
+            <TextView
+                android:id="@+id/YearRange2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/YearRange2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/Volume"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/Volume" />
+
+            <TextView
+                android:id="@+id/Volume2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/Volume2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/AverageDailyVolume"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/AverageDailyVolume" />
+
+            <TextView
+                android:id="@+id/AverageDailyVolume2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/AverageDailyVolume2" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:id="@+id/MarketCapitalization"
+                android:layout_column="1"
+                android:padding="3dip"
+                android:text="@string/MarketCapitalization" />
+
+            <TextView
+                android:id="@+id/MarketCapitalization2"
+                android:gravity="right"
+                android:padding="3dip"
+                android:text="@string/MarketCapitalization2" />
+        </TableRow>
+    </TableLayout>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/change"
+        android:layout_toLeftOf="@+id/change"
+        android:contentDescription="@string/imageViewDescription" />
+    <!-- android:src="@drawable/up_g" -->
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxWidth="240dp"
+        android:maxHeight="220dp"
+        android:scaleType="fitCenter"
+        android:layout_below="@+id/tableLayout1"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/imageViewDescription" />
+    	<!-- android:layout_alignRight="@+id/imageView2" -->
+    
+	
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/edit_message"
+        android:layout_alignBottom="@+id/edit_message"
+        android:layout_alignParentRight="true"
+        android:onClick="sendMessage"
+        android:text="@string/button_send"
+        android:textSize="14sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView2"
+        android:layout_below="@+id/imageView2"
+        android:onClick="viewHeadlines"
+        android:text="@string/NewsHeadlines"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/button2"
+        android:layout_below="@+id/imageView2"
+        android:layout_alignRight="@+id/imageView2"
+        android:onClick="sharefb"
+        android:text="@string/Facebook"
+        android:textSize="14sp"
+        android:visibility="gone" />
+
+</RelativeLayout>
+
+</ScrollView>
